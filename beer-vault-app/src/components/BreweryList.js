@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { Query } from 'react-apollo'
 import gql from 'graphql-tag'
 import Brewery from './Brewery'
+import './Brewery.css';
 
 const BREWERY_QUERY = gql `
 {
@@ -16,8 +17,40 @@ const BREWERY_QUERY = gql `
   }
 }
 `
+
+const breweriesToRender = [
+  {
+    id: "1",
+    name: "Samuel Adams",
+    addressLine1: "123 Nowhere",
+    city: "Boston",
+    state: "MA",
+    zip: "12345"
+  },
+  {
+    id: "2",
+    name: "Boulavard Brewery",
+    addressLine1: "123 Nowhere",
+    city: "Kansas City",
+    state: "MO",
+    zip: "65432",
+  },
+]
+
 class BreweryList extends Component {
   render() {
+
+    // Use this Return for mock data.
+    // return (
+    //   <div>
+    //     <div className="page_title">
+    //       Dale's Beer Vault
+    //     </div>
+    //     {breweriesToRender.map( brewery => <Brewery key={brewery.id} brewery={brewery} />)}
+    //   </div>
+    // )
+
+    // Use this return for the GraphQL
     return (
       <Query query={BREWERY_QUERY}>
         {({ loading, error, data }) => {
@@ -28,6 +61,9 @@ class BreweryList extends Component {
     
           return (
             <div>
+              <div className="page_title">
+                 Dale's Beer Vault
+             </div>
               {breweriesToRender.map( brewery => <Brewery key={brewery.id} brewery={brewery} />)}
             </div>
           )
