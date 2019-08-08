@@ -1,0 +1,27 @@
+.page_title {
+    font-family: Bookman,sans-serif;
+    font-size: 80px;
+    font-weight: 900;
+    line-height: 4.2rem;
+    text-align: center;
+    padding-top: 50px;
+    padding-bottom: 50px;
+  }
+
+  .card{
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    max-width: 400px;
+    margin: auto;
+    text-align: center;
+    font-family: arial;
+    margin-bottom: 20px;
+    background-color: lightskyblue;
+  }
+
+  .address{
+    font-size: 14px;
+    line-height: 0.5;
+  }
+  .brewery{
+    padding: 2px 16px;
+  }
